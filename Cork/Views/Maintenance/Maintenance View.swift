@@ -253,6 +253,7 @@ struct MaintenanceView: View
                         }
                     }
                     //.fixedSize(horizontal: false, vertical: true)
+                    .frame(width: 220, alignment: .leading)
                 }
                 .padding()
                 //.frame(minWidth: 300, minHeight: 150)
