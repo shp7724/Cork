@@ -19,14 +19,10 @@ struct BrewPane: View
         SettingsPaneTemplate {
             Form
             {
-                LabeledContent {
-                    Toggle(isOn: $allowBrewAnalytics) {
-                        Text("Collect Analytics")
-                    }
-                    .disabled(isPerformingBrewAnalyticsChangeCommand)
-                } label: {
-                    Text("Analytics:")
+                Toggle(isOn: $allowBrewAnalytics) {
+                    Text("Collect Analytics")
                 }
+                .disabled(isPerformingBrewAnalyticsChangeCommand)
 
             }
             .onChange(of: allowBrewAnalytics) { newValue in

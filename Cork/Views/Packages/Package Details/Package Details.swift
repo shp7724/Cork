@@ -157,12 +157,6 @@ struct PackageDetailView: View
                                                 .textSelection(.enabled)
                                                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                                                 .lineLimit(isShowingExpandedCaveats ? nil : 2)
-                                                .background {
-                                                    ViewThatFits(in: .vertical) {
-                                                        text.hidden()
-                                                        Color.clear.onAppear { canExpandCaveats = true }
-                                                    }
-                                                }
 
                                             if canExpandCaveats {
                                                 Button {
@@ -184,18 +178,15 @@ struct PackageDetailView: View
                     
                     GroupBox
                     {
-                        Grid(alignment: .leading)
-                        {
-                            GridRow(alignment: .top)
-                            {
+                        VStack(alignment: .leading) {
+                            HStack(alignment: .top) {
                                 Text("Tap")
                                 Text(tap)
                             }
-
+                            
                             Divider()
-
-                            GridRow(alignment: .top)
-                            {
+                            
+                            HStack(alignment: .top) {
                                 Text("Type")
                                 if package.isCask
                                 {
@@ -206,11 +197,10 @@ struct PackageDetailView: View
                                     Text("Formula")
                                 }
                             }
-
+                            
                             Divider()
-
-                            GridRow(alignment: .top)
-                            {
+                            
+                            HStack(alignment: .top) {
                                 Text("Homepage")
                                 Link(destination: homepage)
                                 {
@@ -228,7 +218,6 @@ struct PackageDetailView: View
                             {
                                 DisclosureGroup("Dependencies", isExpanded: $isShowingDependencies)
                                 {}
-                                .disclosureGroupStyle(NoPadding())
 
                                 if isShowingDependencies
                                 {
@@ -242,22 +231,19 @@ struct PackageDetailView: View
                     {
                         GroupBox
                         {
-                            Grid(alignment: .leading)
-                            {
-                                GridRow(alignment: .top)
-                                {
+                            VStack(alignment: .leading) {
+                                HStack(alignment: .top) {
                                     Text("Installed On")
                                     Text(package.convertDateToPresentableFormat(date: installedOnDate))
                                 }
-
+                                
                                 if let packageSize = package.sizeInBytes
                                 {
                                     Divider()
 
-                                    GridRow(alignment: .top)
-                                    {
+                                    HStack(alignment: .top) {
                                         Text("Size")
-
+                                        
                                         HStack
                                         {
                                             Text(package.convertSizeToPresentableFormat(size: packageSize))

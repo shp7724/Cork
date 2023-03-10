@@ -45,7 +45,9 @@ struct GeneralPane: View
                         .foregroundColor(Color(nsColor: NSColor.systemGray))
                 }
                 
-                LabeledContent {
+                HStack(alignment: .top) {
+                    Text("Dependencies:")
+                    
                     VStack(alignment: .leading)
                     {
                         Toggle(isOn: $displayAdvancedDependencies) {
@@ -53,8 +55,6 @@ struct GeneralPane: View
                         }
 
                     }
-                } label: {
-                    Text("Dependencies:")
                 }
                 
                 Picker(selection: $caveatDisplayOptions) {
@@ -73,12 +73,12 @@ struct GeneralPane: View
                         .foregroundColor(Color(nsColor: NSColor.systemGray))
                 }
                 
-                LabeledContent {
+                HStack(alignment: .top) {
+                    Text("Search Results:")
+                    
                     Toggle(isOn: $showDescriptionsInSearchResults) {
                         Text("Show descriptions in search results")
                     }
-                } label: {
-                    Text("Search Results:")
                 }
 
 

@@ -20,18 +20,18 @@ struct InstallationAndUninstallationPane: View
         {
             Form
             {
-                LabeledContent
-                {
+                HStack(alignment: .top) {
+                    Text("Installaion:")
+                    
                     Toggle(isOn: $showPackagesStillLeftToInstall)
                     {
                         Text("Show list of packages currently being installed")
                     }
-                } label: {
-                    Text("Installation:")
                 }
 
-                LabeledContent
-                {
+                HStack(alignment: .top) {
+                    Text("Uninstallation:")
+                    
                     VStack(alignment: .leading)
                     {
                         Toggle(isOn: $purgeCacheAfterEveryUninstallation)
@@ -43,8 +43,6 @@ struct InstallationAndUninstallationPane: View
                             Text("Remove orphans after uninstalling packages")
                         }
                     }
-                } label: {
-                    Text("Uninstallation:")
                 }
             }
         }

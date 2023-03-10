@@ -49,38 +49,32 @@ struct StartPage: View
                         {
                             GroupBox
                             {
-                                Grid
+                                VStack(alignment: .leading)
                                 {
-                                    GridRow(alignment: .firstTextBaseline)
-                                    {
-                                        VStack(alignment: .leading)
-                                        {
-                                            Text(upgradeablePackages.count == 1 ? "There is 1 outdated package" : "There are \(upgradeablePackages.count) outdated packages")
-                                                .font(.headline)
-                                            DisclosureGroup(isExpanded: $isDisclosureGroupExpanded)
-                                            {} label: {
-                                                Text("Outdated packages")
-                                                    .font(.subheadline)
-                                            }
-                                            
-                                            if isDisclosureGroupExpanded
-                                            {
-                                                List(upgradeablePackages)
-                                                { package in
-                                                    Text(package.name)
-                                                }
-                                                .listStyle(.bordered(alternatesRowBackgrounds: true))
-                                                .frame(height: 100)
-                                            }
-                                        }
-
-                                        Button
-                                        {
-                                            updateBrewPackages(updateProgressTracker, appState: appState)
-                                        } label: {
-                                            Text("Update")
-                                        }
+                                    Text(upgradeablePackages.count == 1 ? "There is 1 outdated package" : "There are \(upgradeablePackages.count) outdated packages")
+                                        .font(.headline)
+                                    DisclosureGroup(isExpanded: $isDisclosureGroupExpanded)
+                                    {} label: {
+                                        Text("Outdated packages")
+                                            .font(.subheadline)
                                     }
+                                    
+                                    if isDisclosureGroupExpanded
+                                    {
+                                        List(upgradeablePackages)
+                                        { package in
+                                            Text(package.name)
+                                        }
+                                        .listStyle(.bordered(alternatesRowBackgrounds: true))
+                                        .frame(height: 100)
+                                    }
+                                }
+
+                                Button
+                                {
+                                    updateBrewPackages(updateProgressTracker, appState: appState)
+                                } label: {
+                                    Text("Update")
                                 }
                             }
                         }
@@ -89,65 +83,44 @@ struct StartPage: View
                         {
                             GroupBox
                             {
-                                Grid(alignment: .leading)
+                                VStack(alignment: .leading)
                                 {
-                                    GridRow(alignment: .firstTextBaseline)
-                                    {
-                                        GroupBoxHeadlineGroup(title: "You have \(brewData.installedFormulae.count) Formulae installed", mainText: "Formulae are usually apps that you run in a terminal")
-                                            .animation(.none, value: brewData.installedFormulae.count)
-                                    }
-
+                                    GroupBoxHeadlineGroup(title: "You have \(brewData.installedFormulae.count) Formulae installed", mainText: "Formulae are usually apps that you run in a terminal")
+                                        .animation(.none, value: brewData.installedFormulae.count)
+                                    
                                     Divider()
-
-                                    GridRow(alignment: .firstTextBaseline)
-                                    {
-                                        GroupBoxHeadlineGroup(title: "You have \(brewData.installedCasks.count) Casks installed", mainText: "Casks are usually graphical apps")
-                                            .animation(.none, value: brewData.installedCasks.count)
-                                    }
-
+                                    
+                                    GroupBoxHeadlineGroup(title: "You have \(brewData.installedCasks.count) Casks installed", mainText: "Casks are usually graphical apps")
+                                        .animation(.none, value: brewData.installedCasks.count)
+                                    
                                     Divider()
-
-                                    GridRow(alignment: .firstTextBaseline)
-                                    {
-                                        GroupBoxHeadlineGroup(title: "You have \(availableTaps.addedTaps.count) Taps added", mainText: "Taps are sources of packages that are not provided by Homebrew itself")
-                                            .animation(.none, value: availableTaps.addedTaps.count)
-                                    }
+                                    
+                                    GroupBoxHeadlineGroup(title: "You have \(availableTaps.addedTaps.count) Taps added", mainText: "Taps are sources of packages that are not provided by Homebrew itself")
+                                        .animation(.none, value: availableTaps.addedTaps.count)
                                 }
                             }
                             
                             GroupBox
                             {
-                                Grid(alignment: .leading)
-                                {
-                                    GridRow(alignment: .firstTextBaseline)
-                                    {
-                                        GroupBoxHeadlineGroup(title: "Brew analytics are \(allowBrewAnalytics ? "enabled" : "disabled")", mainText: "\(allowBrewAnalytics ? "Brew is collecting various anonymized data, such as which packages you have installed" : "Brew is not collecting any data about how you use it")")
-                                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                                    }
-                                }
+                                GroupBoxHeadlineGroup(title: "Brew analytics are \(allowBrewAnalytics ? "enabled" : "disabled")", mainText: "\(allowBrewAnalytics ? "Brew is collecting various anonymized data, such as which packages you have installed" : "Brew is not collecting any data about how you use it")")
+                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                             }
                             
                             if appState.cachedDownloadsFolderSize != 0
                             {
                                 GroupBox
                                 {
-                                    Grid(alignment: .leading) {
-                                        GridRow(alignment: .center) {
-                                            HStack
-                                            {
-                                                GroupBoxHeadlineGroup(title: "You have \(appState.cachedDownloadsFolderSize.convertDirectorySizeToPresentableFormat(size: appState.cachedDownloadsFolderSize)) of cached downloads", mainText: "These files were used for installing packages.\nThey are safe to remove.")
-                                                
-                                                Spacer()
-                                                
-                                                Button {
-                                                    appState.isShowingFastCacheDeletionMaintenanceView = true
-                                                } label: {
-                                                    Text("Delete Cached Downloads")
-                                                }
-                                            }
-
-                                        }
+                                    HStack
+                                    {
+                                        GroupBoxHeadlineGroup(title: "You have \(appState.cachedDownloadsFolderSize.convertDirectorySizeToPresentableFormat(size: appState.cachedDownloadsFolderSize)) of cached downloads", mainText: "These files were used for installing packages.\nThey are safe to remove.")
                                         
+                                        Spacer()
+                                        
+                                        Button {
+                                            appState.isShowingFastCacheDeletionMaintenanceView = true
+                                        } label: {
+                                            Text("Delete Cached Downloads")
+                                        }
                                     }
                                 }
                             }

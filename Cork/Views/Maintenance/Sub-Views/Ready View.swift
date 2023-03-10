@@ -32,8 +32,10 @@ struct MaintenanceReadyView: View {
         {
             Form
             {
-                LabeledContent("Packages:")
+                HStack(alignment: .top)
                 {
+                    Text("Packages:")
+                    
                     VStack(alignment: .leading)
                     {
                         Toggle(isOn: $shouldUninstallOrphans)
@@ -43,8 +45,10 @@ struct MaintenanceReadyView: View {
                     }
                 }
 
-                LabeledContent("Downloads:")
+                HStack(alignment: .top)
                 {
+                    Text("Downloads:")
+                    
                     VStack(alignment: .leading)
                     {
                         Toggle(isOn: $shouldPurgeCache)
@@ -58,8 +62,9 @@ struct MaintenanceReadyView: View {
                     }
                 }
 
-                LabeledContent("Other:")
+                HStack(alignment: .top)
                 {
+                    Text("Other:")
                     Toggle(isOn: $shouldPerformHealthCheck)
                     {
                         Text("Perform health check")
