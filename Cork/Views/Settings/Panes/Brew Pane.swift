@@ -33,7 +33,7 @@ struct BrewPane: View
                         isPerformingBrewAnalyticsChangeCommand = true
                         
                         print("Will ENABLE analytics")
-                        await shell("/opt/homebrew/bin/brew", ["analytics", "on"])
+                        await shell(AppConstants.brewExecutablePath.absoluteString, ["analytics", "on"])
                         
                         isPerformingBrewAnalyticsChangeCommand = false
                     }
@@ -45,7 +45,7 @@ struct BrewPane: View
                         isPerformingBrewAnalyticsChangeCommand = true
                         
                         print("Will DISABLE analytics")
-                        await shell("/opt/homebrew/bin/brew", ["analytics", "off"])
+                        await shell(AppConstants.brewExecutablePath.absoluteString, ["analytics", "off"])
                         
                         isPerformingBrewAnalyticsChangeCommand = false
                     }
