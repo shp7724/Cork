@@ -89,11 +89,12 @@ struct ContentView: View
         {
             Task
             {
-                await loadUpTappedTaps(into: availableTaps)
                 async let analyticsQueryCommand = await shell(AppConstants.brewExecutablePath.absoluteString, ["analytics"])
 
                 brewData.installedFormulae = await loadUpFormulae(appState: appState, sortBy: sortPackagesBy)
                 brewData.installedCasks = await loadUpCasks(appState: appState, sortBy: sortPackagesBy)
+                
+                availableTaps.addedTaps = await loadUpTappedTaps()
                 
                 if await analyticsQueryCommand.standardOutput.contains("Analytics are enabled")
                 {

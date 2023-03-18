@@ -62,6 +62,7 @@
 		637E006828733C1C005C9890 /* Search for Package by ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E006728733C1C005C9890 /* Search for Package by ID.swift */; };
 		637E006B28734041005C9890 /* Install Selected Packages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E006A28734041005C9890 /* Install Selected Packages.swift */; };
 		637E006E2873419B005C9890 /* Install Progress Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E006D2873419B005C9890 /* Install Progress Tracker.swift */; };
+		6380258329C5F39100F0CC86 /* Array - Get Second to Last Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380258229C5F39100F0CC86 /* Array - Get Second to Last Element.swift */; };
 		6382C8F9299D6C1D00354B19 /* Package Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6382C8F8299D6C1D00354B19 /* Package Sorting.swift */; };
 		6382C8FB299D6E5D00354B19 /* General Pane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6382C8FA299D6E5D00354B19 /* General Pane.swift */; };
 		6382C8FE299D70F400354B19 /* Sort Alphabetically.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6382C8FD299D70F400354B19 /* Sort Alphabetically.swift */; };
@@ -163,6 +164,7 @@
 		637E006728733C1C005C9890 /* Search for Package by ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search for Package by ID.swift"; sourceTree = "<group>"; };
 		637E006A28734041005C9890 /* Install Selected Packages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Install Selected Packages.swift"; sourceTree = "<group>"; };
 		637E006D2873419B005C9890 /* Install Progress Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Install Progress Tracker.swift"; sourceTree = "<group>"; };
+		6380258229C5F39100F0CC86 /* Array - Get Second to Last Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array - Get Second to Last Element.swift"; sourceTree = "<group>"; };
 		6382C8F8299D6C1D00354B19 /* Package Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Sorting.swift"; sourceTree = "<group>"; };
 		6382C8FA299D6E5D00354B19 /* General Pane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "General Pane.swift"; sourceTree = "<group>"; };
 		6382C8FD299D70F400354B19 /* Sort Alphabetically.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sort Alphabetically.swift"; sourceTree = "<group>"; };
@@ -559,6 +561,7 @@
 				63B8D4F9299E442300AA7CFA /* View - Conditional Modifiers.swift */,
 				63AC992F29A7814700B38D7C /* String - Contains Element in Array.swift */,
 				6342117D29AA667500E2563B /* Int64 - Convert Sirectory Size to Presentable Format.swift */,
+				6380258229C5F39100F0CC86 /* Array - Get Second to Last Element.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -760,6 +763,7 @@
 				6342117A29AA52B900E2563B /* Delete Cached Downloads.swift in Sources */,
 				6340657A2871AC27001A2178 /* Brew Data Storage.swift in Sources */,
 				633289E729A68A61004B2930 /* Package Installation Steps.swift in Sources */,
+				6380258329C5F39100F0CC86 /* Array - Get Second to Last Element.swift in Sources */,
 				63D51F6B299A9AC500203F3F /* Settings Pane Template.swift in Sources */,
 				63006E0829ACC60F00243E29 /* Get Package Homepage.swift in Sources */,
 				63C830C129984BA4002D11BB /* Button That Opens Websites.swift in Sources */,
@@ -959,7 +963,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Cork/Preview Content\"";
 				DEVELOPMENT_TEAM = ZSVA6DVZHM;
@@ -973,7 +977,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 0.1.5_LD;
+				MARKETING_VERSION = 0.1.6_LD;
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidbures.Cork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -990,7 +994,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Cork/Preview Content\"";
 				DEVELOPMENT_TEAM = ZSVA6DVZHM;
@@ -1004,7 +1008,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 0.1.5_LD;
+				MARKETING_VERSION = 0.1.6_LD;
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidbures.Cork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

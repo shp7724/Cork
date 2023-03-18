@@ -4,7 +4,6 @@
 //
 //  Created by David Bureš on 03.07.2022.
 //
-
 import Foundation
 
 func getContentsOfFolder(targetFolder: URL) async -> [BrewPackage]
@@ -46,10 +45,9 @@ func getContentsOfFolder(targetFolder: URL) async -> [BrewPackage]
 
                 let folderSizeRaw: Int64? = directorySize(url: targetFolder.appendingPathComponent(item, conformingTo: .directory))
 
-                print("\n Installation date for package \(item) at path \(targetFolder.appendingPathComponent(item, conformingTo: .directory)) is \(installedOn) \n")
+                print("\n Installation date for package \(item) at path \(targetFolder.appendingPathComponent(item, conformingTo: .directory)) is \(installedOn ?? Date()) \n")
 
                 // let installedOn: Date? = try? URL(string: item)!.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate
-
                 if targetFolder.path.contains("Cellar")
                 {
                     contentsOfFolder.append(BrewPackage(name: item, isCask: false, installedOn: installedOn, versions: temporaryVersionStorage, sizeInBytes: folderSizeRaw))
@@ -75,13 +73,20 @@ func getContentsOfFolder(targetFolder: URL) async -> [BrewPackage]
     return contentsOfFolder
 }
 
-func getContentsOfFolder(targetFolder: URL) -> [URL]
+func getContentsOfFolder(targetFolder: URL, options: FileManager.DirectoryEnumerationOptions? = nil) -> [URL]
 {
     var contentsOfFolder: [URL] = .init()
 
     do
     {
-        contentsOfFolder = try FileManager.default.contentsOfDirectory(at: targetFolder, includingPropertiesForKeys: nil)
+        if let options
+        {
+            contentsOfFolder = try FileManager.default.contentsOfDirectory(at: targetFolder, includingPropertiesForKeys: nil, options: options)
+        }
+        else
+        {
+            contentsOfFolder = try FileManager.default.contentsOfDirectory(at: targetFolder, includingPropertiesForKeys: nil)
+        }
     }
     catch let folderReadingError as NSError
     {
