@@ -15,9 +15,13 @@ struct AppConstants {
         { // Apple Sillicon
             return URL(string: "/opt/homebrew/bin/brew")!
         }
-        else
+        else if FileManager.default.fileExists(atPath: "/usr/local/bin/brew")
         { // Intel
             return URL(string: "/usr/local/bin/brew")!
+        }
+        else
+        {
+            return URL(string: "")!
         }
     }()
     static let brewCellarPath: URL =

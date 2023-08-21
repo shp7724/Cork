@@ -24,5 +24,20 @@ class AppState: ObservableObject {
     @Published var isLoadingFormulae: Bool = true
     @Published var isLoadingCasks: Bool = true
     
+    @Published var isShowingNoHomebrewExecutableFoundError: Bool = false
+    
     @Published var cachedDownloadsFolderSize: Int64 = directorySize(url: AppConstants.brewCachedDownloadsPath)
+    
+    func checkIfHomebrewWasFound() -> Void
+    {
+        if AppConstants.brewExecutablePath.absoluteString.isEmpty
+        {
+            print("Homebrew executable was not found")
+            self.isShowingNoHomebrewExecutableFoundError = true
+        }
+        else
+        {
+            print("Homebrew executable was found")
+        }
+    }
 }

@@ -108,6 +108,10 @@ struct ContentView: View
                 }
             }
         }
+        .onAppear
+        {
+            appState.checkIfHomebrewWasFound()
+        }
         .onChange(of: sortPackagesBy, perform: { newSortOption in
             switch newSortOption {
             case .none:
