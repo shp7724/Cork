@@ -32,6 +32,8 @@ struct PackageDetailView: View
     @State private var caveats: String? = nil
     @State private var pinned: Bool = false
 
+    @State private var compatibleSystemVersions: [String]?
+
     @State private var isShowingExpandedCaveats: Bool = false
     @State private var canExpandCaveats: Bool = false
 
@@ -191,20 +193,20 @@ struct PackageDetailView: View
                                                             .replacingOccurrences(of: "\n\n", with: "\n")
                                                     )
                                                 )
-                                                    .lineSpacing(5)
+                                                .lineSpacing(5)
 
                                                 text
                                                     .textSelection(.enabled)
                                                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                                                     .lineLimit(isShowingExpandedCaveats ? nil : 2)
                                                     .background
-                                                {
-                                                    ViewThatFits(in: .vertical)
                                                     {
-                                                        text.hidden()
-                                                        Color.clear.onAppear { canExpandCaveats = true }
+                                                        ViewThatFits(in: .vertical)
+                                                        {
+                                                            text.hidden()
+                                                            Color.clear.onAppear { canExpandCaveats = true }
+                                                        }
                                                     }
-                                                }
 
                                                 if canExpandCaveats
                                                 {
@@ -261,6 +263,17 @@ struct PackageDetailView: View
                                     Link(destination: homepage)
                                     {
                                         Text(homepage.absoluteString)
+                                    }
+                                }
+
+                                if let compatibleSystemVersions
+                                {
+                                    Divider()
+
+                                    GridRow
+                                    {
+                                        Text("package-details.optimized-for-system")
+                                        Text(compatibleSystemVersions.joined(separator: ", "))
                                     }
                                 }
                             }
@@ -364,7 +377,7 @@ struct PackageDetailView: View
                         HStack(spacing: 15)
                         {
                             UninstallationProgressWheel()
-                            
+
                             if allowMoreCompleteUninstallations
                             {
                                 Spacer()
@@ -390,7 +403,8 @@ struct PackageDetailView: View
                             }
                             else
                             {
-                                Menu {
+                                Menu
+                                {
                                     Button(role: .destructive)
                                     {
                                         Task
@@ -451,6 +465,55 @@ struct PackageDetailView: View
                 outdated = getIfPackageIsOutdated(json: parsedJSON, package: package)
                 caveats = getCaveatsFromJSON(json: parsedJSON, package: package)
                 pinned = getPinStatusFromJSON(json: parsedJSON, package: package)
+
+                if !package.isCask
+                { /// Get the compatible OSs if the package is a Formula
+                    let compatibleSystems: [String]? = try? getCompatibleVersionsForFormula(json: parsedJSON, package: package)
+
+                    print("Found compatible systems: \(compatibleSystems)")
+
+                    if let compatibleSystems
+                    {
+                        var temporarySystemVersionsTracker: [String]?
+
+                        for compatibleSystem in compatibleSystems
+                        {
+                            if !compatibleSystem.starts(with: "arm")
+                            { /// Throw out everytihng that begins with "ARM", because it's just a duplicate and we don't need these to show them in the UI. We also throw out everything that ends with "Linux", since it's not relevant to macOS
+                                if !compatibleSystem.hasSuffix("linux")
+                                {
+                                    if temporarySystemVersionsTracker == nil
+                                    {
+                                        temporarySystemVersionsTracker = [compatibleSystem]
+                                    }
+                                    else
+                                    {
+                                        temporarySystemVersionsTracker!.append(compatibleSystem)
+                                    }
+                                }
+                            }
+                        }
+
+                        print("Temporary systems tracker: \(temporarySystemVersionsTracker)")
+
+                        if let temporarySystemVersionsTracker
+                        {
+                            for compatibleSystem in temporarySystemVersionsTracker
+                            {
+                                if compatibleSystemVersions == nil
+                                {
+                                    compatibleSystemVersions = [AppConstants.getFullOSNameFromLookupName(lookupName: compatibleSystem)]
+                                }
+                                else
+                                {
+                                    compatibleSystemVersions!.append(AppConstants.getFullOSNameFromLookupName(lookupName: compatibleSystem))
+                                }
+                            }
+
+                            compatibleSystemVersions = AppConstants.sortVersionDictionary(versionDictionary: compatibleSystemVersions ?? [])
+                        }
+                    }
+                }
 
                 if let packageDependencies = getPackageDependenciesFromJSON(json: parsedJSON, package: package)
                 {

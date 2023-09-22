@@ -113,18 +113,50 @@ struct AppConstants
     static let backgroundUpdateInterval: TimeInterval = 10 * 60
     static let backgroundUpdateIntervalTolerance: TimeInterval = 1 * 60
 
+    static private let macOSVersionDictionary: [Int: (lookupName: String, fullName: String)] = [
+        14: ("sonoma", "Sonoma"),
+        13: ("ventura", "Ventura"),
+        12: ("monterey", "Monterey"),
+        11: ("big_sur", "Big Sur"),
+        10: ("catalina", "Catalina")
+    ]
+
     static let osVersionString: (lookupName: String, fullName: String) =
     {
-        let versionDictionary: [Int: (lookupName: String, fullName: String)] = [
-            14: ("sonoma", "Sonoma"),
-            13: ("ventura", "Ventura"),
-            12: ("monterey", "Monterey"),
-            11: ("big_sur", "Big Sur"),
-            10: ("legacy", "Legacy")
-        ]
-
         let macOSVersionTheUserIsRunning: Int = ProcessInfo.processInfo.operatingSystemVersion.majorVersion
 
-        return versionDictionary[macOSVersionTheUserIsRunning, default: ("legacy", "Legacy")]
+        return macOSVersionDictionary[macOSVersionTheUserIsRunning, default: ("legacy", "Legacy")]
     }()
+
+    static func getFullOSNameFromLookupName(lookupName: String) -> String
+    {
+        var foundFullName: String = ""
+        print("Will check key \(lookupName)")
+        for (_, value) in macOSVersionDictionary
+        {
+            if value.lookupName == lookupName
+            {
+                foundFullName = value.fullName
+                print("Found full name: \(foundFullName)")
+                break
+            }
+        }
+
+        return foundFullName
+    }
+    static func sortVersionDictionary(versionDictionary: [String]) -> [String]
+    {
+        let sortedArray = versionDictionary.sorted
+        { (element1, element2) -> Bool in
+            guard let index1 = macOSVersionDictionary.first(where: { $0.value.lookupName == element1 })?.key,
+                  let index2 = macOSVersionDictionary.first(where: { $0.value.lookupName == element2 })?.key else {
+                return false
+            }
+
+            return index1 < index2
+        }
+
+        print("Sorted result: \(sortedArray)")
+        return sortedArray
+    }
 }

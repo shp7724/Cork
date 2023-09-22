@@ -6972,6 +6972,16 @@
         }
       }
     },
+    "package-details.optimized-for-system" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Optimized for"
+          }
+        }
+      }
+    },
     "package-details.outdated" : {
       "localizations" : {
         "de" : {
