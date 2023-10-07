@@ -116,6 +116,10 @@ struct CorkApp: App
                         completion(NSBackgroundActivityScheduler.Result.finished)
                     }
                 }
+                .onChange(of: appDelegate.appState.isLoadingFormulae)
+                { newValue in
+                    try! insertDataIntoSharedStorage(HomebrewStats(installedPackagesCount: brewData.installedFormulae.count, installedCasksCount: brewData.installedCasks.count, addedTapsCount: availableTaps.addedTaps.count), dataType: .homebrewStats)
+                }
                 .onChange(of: outdatedPackageTracker.outdatedPackages.count)
                 { newValue in
                     let outdatedPackageCount = newValue
@@ -144,6 +148,8 @@ struct CorkApp: App
                                 }
                             }
                         }
+
+                        try! insertDataIntoSharedStorage(outdatedPackageTracker.outdatedPackages, dataType: .outdatedPackages)
                     }
                 }
                 .onChange(of: outdatedPackageNotificationType) // Set the correct app badge number when the user changes their notification settings

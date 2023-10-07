@@ -85,6 +85,20 @@
 		6373D9CE29DC623E00D98607 /* Package Reinstallation Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6373D9CD29DC623E00D98607 /* Package Reinstallation Stage.swift */; };
 		637402DA299BF878001AB7B1 /* Sidebar View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637402D9299BF878001AB7B1 /* Sidebar View.swift */; };
 		637410AE2ABB751B00B7915A /* Get Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637410AD2ABB751B00B7915A /* Get Compatibility.swift */; };
+		63753F942AD1A9C100744ECD /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63753F932AD1A9C100744ECD /* WidgetKit.framework */; };
+		63753F962AD1A9C100744ECD /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63753F952AD1A9C100744ECD /* SwiftUI.framework */; };
+		63753F992AD1A9C100744ECD /* CorkWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63753F982AD1A9C100744ECD /* CorkWidgetBundle.swift */; };
+		63753F9B2AD1A9C100744ECD /* CorkWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63753F9A2AD1A9C100744ECD /* CorkWidget.swift */; };
+		63753F9D2AD1A9C300744ECD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63753F9C2AD1A9C300744ECD /* Assets.xcassets */; };
+		63753FA22AD1A9C300744ECD /* CorkWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 63753F912AD1A9C100744ECD /* CorkWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		63753FA92AD1AC6700744ECD /* Encode Data into Shared Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63753FA82AD1AC6700744ECD /* Encode Data into Shared Storage.swift */; };
+		63753FAC2AD1ACE700744ECD /* Shared Data Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63753FAB2AD1ACE700744ECD /* Shared Data Type.swift */; };
+		63753FAD2AD1AD2300744ECD /* Outdated Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E716DF29DDC03E004FD2B4 /* Outdated Package.swift */; };
+		63753FAE2AD1AD2800744ECD /* Shared Data Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63753FAB2AD1ACE700744ECD /* Shared Data Type.swift */; };
+		63753FB12AD1AE2800744ECD /* Decode Data from Shared Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63753FAF2AD1ADD400744ECD /* Decode Data from Shared Storage.swift */; };
+		63753FB32AD1AF1100744ECD /* Brew Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340657C2871AC65001A2178 /* Brew Package.swift */; };
+		63753FB62AD1B22000744ECD /* Homebrew Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63753FB52AD1B22000744ECD /* Homebrew Stats.swift */; };
+		63753FB72AD1B29400744ECD /* Homebrew Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63753FB52AD1B22000744ECD /* Homebrew Stats.swift */; };
 		637E00642872F3CE005C9890 /* Update Packages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E00632872F3CE005C9890 /* Update Packages.swift */; };
 		637E00662872F629005C9890 /* Update Progress Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E00652872F629005C9890 /* Update Progress Tracker.swift */; };
 		637E006828733C1C005C9890 /* Search for Package by ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E006728733C1C005C9890 /* Search for Package by ID.swift */; };
@@ -184,6 +198,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		63753FA02AD1A9C300744ECD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 634065592871AA42001A2178 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63753F902AD1A9C100744ECD;
+			remoteInfo = CorkWidgetExtension;
+		};
 		C4C2A0E52A9109EB00E6F172 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 634065592871AA42001A2178 /* Project object */;
@@ -192,6 +213,20 @@
 			remoteInfo = CorkHelp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		63753FA32AD1A9C300744ECD /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				63753FA22AD1A9C300744ECD /* CorkWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		63006DFA29AB692B00243E29 /* DisclosureGroup - No Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DisclosureGroup - No Padding.swift"; sourceTree = "<group>"; };
@@ -273,6 +308,18 @@
 		6373D9CD29DC623E00D98607 /* Package Reinstallation Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Reinstallation Stage.swift"; sourceTree = "<group>"; };
 		637402D9299BF878001AB7B1 /* Sidebar View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sidebar View.swift"; sourceTree = "<group>"; };
 		637410AD2ABB751B00B7915A /* Get Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get Compatibility.swift"; sourceTree = "<group>"; };
+		63753F912AD1A9C100744ECD /* CorkWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CorkWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		63753F932AD1A9C100744ECD /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		63753F952AD1A9C100744ECD /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		63753F982AD1A9C100744ECD /* CorkWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorkWidgetBundle.swift; sourceTree = "<group>"; };
+		63753F9A2AD1A9C100744ECD /* CorkWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorkWidget.swift; sourceTree = "<group>"; };
+		63753F9C2AD1A9C300744ECD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63753F9E2AD1A9C300744ECD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63753F9F2AD1A9C300744ECD /* CorkWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CorkWidget.entitlements; sourceTree = "<group>"; };
+		63753FA82AD1AC6700744ECD /* Encode Data into Shared Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encode Data into Shared Storage.swift"; sourceTree = "<group>"; };
+		63753FAB2AD1ACE700744ECD /* Shared Data Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shared Data Type.swift"; sourceTree = "<group>"; };
+		63753FAF2AD1ADD400744ECD /* Decode Data from Shared Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decode Data from Shared Storage.swift"; sourceTree = "<group>"; };
+		63753FB52AD1B22000744ECD /* Homebrew Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Homebrew Stats.swift"; sourceTree = "<group>"; };
 		637E00632872F3CE005C9890 /* Update Packages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Update Packages.swift"; sourceTree = "<group>"; };
 		637E00652872F629005C9890 /* Update Progress Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Update Progress Tracker.swift"; sourceTree = "<group>"; };
 		637E006728733C1C005C9890 /* Search for Package by ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search for Package by ID.swift"; sourceTree = "<group>"; };
@@ -379,6 +426,15 @@
 				63689FB62ACFF18900BD354C /* LaunchAtLogin in Frameworks */,
 				63936A4B29AE09D00069C988 /* SwiftyJSON in Frameworks */,
 				634065752871AB22001A2178 /* DavidFoundation in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63753F8E2AD1A9C100744ECD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63753F962AD1A9C100744ECD /* SwiftUI.framework in Frameworks */,
+				63753F942AD1A9C100744ECD /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +586,8 @@
 			children = (
 				634065632871AA42001A2178 /* Cork */,
 				C4C2A0E82A910B0A00E6F172 /* CorkHelp */,
+				63753F972AD1A9C100744ECD /* CorkWidget */,
+				63753F922AD1A9C100744ECD /* Frameworks */,
 				634065622871AA42001A2178 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -539,6 +597,7 @@
 			children = (
 				634065612871AA42001A2178 /* Cork.app */,
 				C4C2A0E02A9108DA00E6F172 /* CorkHelp.help */,
+				63753F912AD1A9C100744ECD /* CorkWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -577,6 +636,7 @@
 		634065762871AB2A001A2178 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				63753FA72AD1AC5400744ECD /* Widgets */,
 				63FFE5722A90CB3F00F95E54 /* Discoverability */,
 				635E448F2A890FAE002C034E /* Networking */,
 				6386529C2A88F0FC0001679E /* Notifications */,
@@ -602,6 +662,7 @@
 		6340657B2871AC4F001A2178 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				63753FB42AD1B21100744ECD /* Widget */,
 				63738C7D2AA38BEA009278B8 /* Updating */,
 				63FFE57A2A90D60400F95E54 /* Discoverability */,
 				63E716DE29DDC025004FD2B4 /* Outdated Packages */,
@@ -786,6 +847,52 @@
 			path = Sidebar;
 			sourceTree = "<group>";
 		};
+		63753F922AD1A9C100744ECD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63753F932AD1A9C100744ECD /* WidgetKit.framework */,
+				63753F952AD1A9C100744ECD /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63753F972AD1A9C100744ECD /* CorkWidget */ = {
+			isa = PBXGroup;
+			children = (
+				63753F982AD1A9C100744ECD /* CorkWidgetBundle.swift */,
+				63753F9A2AD1A9C100744ECD /* CorkWidget.swift */,
+				63753F9C2AD1A9C300744ECD /* Assets.xcassets */,
+				63753F9E2AD1A9C300744ECD /* Info.plist */,
+				63753F9F2AD1A9C300744ECD /* CorkWidget.entitlements */,
+			);
+			path = CorkWidget;
+			sourceTree = "<group>";
+		};
+		63753FA72AD1AC5400744ECD /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				63753FA82AD1AC6700744ECD /* Encode Data into Shared Storage.swift */,
+				63753FAF2AD1ADD400744ECD /* Decode Data from Shared Storage.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		63753FAA2AD1ACDA00744ECD /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				63753FAB2AD1ACE700744ECD /* Shared Data Type.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		63753FB42AD1B21100744ECD /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				63753FB52AD1B22000744ECD /* Homebrew Stats.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
 		637E006928734032005C9890 /* Installation & Removal */ = {
 			isa = PBXGroup;
 			children = (
@@ -893,6 +1000,7 @@
 		63A87466298FE808009F9533 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				63753FAA2AD1ACDA00744ECD /* Widgets */,
 				63FFE5772A90CB6C00F95E54 /* Discoverability */,
 				6373D9CC29DC622B00D98607 /* Package Reinstallation */,
 				6360355629BDE7A700CC0760 /* Package Installation */,
@@ -1199,11 +1307,13 @@
 				6340655D2871AA42001A2178 /* Sources */,
 				6340655E2871AA42001A2178 /* Frameworks */,
 				6340655F2871AA42001A2178 /* Resources */,
+				63753FA32AD1A9C300744ECD /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				C4C2A0E62A9109EB00E6F172 /* PBXTargetDependency */,
+				63753FA12AD1A9C300744ECD /* PBXTargetDependency */,
 			);
 			name = Cork;
 			packageProductDependencies = (
@@ -1214,6 +1324,23 @@
 			productName = Cork;
 			productReference = 634065612871AA42001A2178 /* Cork.app */;
 			productType = "com.apple.product-type.application";
+		};
+		63753F902AD1A9C100744ECD /* CorkWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63753FA62AD1A9C300744ECD /* Build configuration list for PBXNativeTarget "CorkWidgetExtension" */;
+			buildPhases = (
+				63753F8D2AD1A9C100744ECD /* Sources */,
+				63753F8E2AD1A9C100744ECD /* Frameworks */,
+				63753F8F2AD1A9C100744ECD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CorkWidgetExtension;
+			productName = CorkWidgetExtension;
+			productReference = 63753F912AD1A9C100744ECD /* CorkWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		C4C2A0DF2A9108DA00E6F172 /* CorkHelp */ = {
 			isa = PBXNativeTarget;
@@ -1240,11 +1367,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					634065602871AA42001A2178 = {
 						CreatedOnToolsVersion = 14.0;
+					};
+					63753F902AD1A9C100744ECD = {
+						CreatedOnToolsVersion = 15.0;
 					};
 					C4C2A0DF2A9108DA00E6F172 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -1277,6 +1407,7 @@
 			targets = (
 				634065602871AA42001A2178 /* Cork */,
 				C4C2A0DF2A9108DA00E6F172 /* CorkHelp */,
+				63753F902AD1A9C100744ECD /* CorkWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -1290,6 +1421,14 @@
 				6340656C2871AA42001A2178 /* Preview Assets.xcassets in Resources */,
 				C45C26112ABCC2C600290D26 /* Localizable.xcstrings in Resources */,
 				634065692871AA42001A2178 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63753F8F2AD1A9C100744ECD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63753F9D2AD1A9C300744ECD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1418,6 +1557,7 @@
 				63006DFB29AB692B00243E29 /* DisclosureGroup - No Padding.swift in Sources */,
 				6392FD132A921BAB00711B92 /* Initial.swift in Sources */,
 				63A8D2F129CA343F00E892FB /* Save Tagged IDs to Disk.swift in Sources */,
+				63753FB62AD1B22000744ECD /* Homebrew Stats.swift in Sources */,
 				6340657D2871AC65001A2178 /* Brew Package.swift in Sources */,
 				6386529E2A88F1070001679E /* Send Notification.swift in Sources */,
 				637E00642872F3CE005C9890 /* Update Packages.swift in Sources */,
@@ -1448,6 +1588,7 @@
 				632FD290299591C10029FC49 /* Get Folder Size.swift in Sources */,
 				63E41C2F29C50A480084E266 /* Package Updating Stages.swift in Sources */,
 				63006E1729AD143D00243E29 /* Dependency List.swift in Sources */,
+				63753FAC2AD1ACE700744ECD /* Shared Data Type.swift in Sources */,
 				6371EA1E2871D98100300E1B /* Package List Item.swift in Sources */,
 				635A50EB29B7740000164FBA /* Pin an Unpin Package.swift in Sources */,
 				63006E0F29ACCBA400243E29 /* Get Package Tap.swift in Sources */,
@@ -1473,6 +1614,7 @@
 				633289E929A68A8A004B2930 /* Package Installation Stage.swift in Sources */,
 				6382C8FB299D6E5D00354B19 /* General Pane.swift in Sources */,
 				63AC993029A7814700B38D7C /* String - Contains Element in Array.swift in Sources */,
+				63753FA92AD1AC6700744ECD /* Encode Data into Shared Storage.swift in Sources */,
 				632459E92AC5E4D800D6D71A /* Full-Size Grouped Form.swift in Sources */,
 				63958CFD2877341F00E0B807 /* AppDelegate.swift in Sources */,
 				635BE0522A2B382C004DCBD8 /* Taps Section.swift in Sources */,
@@ -1499,6 +1641,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		63753F8D2AD1A9C100744ECD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63753FAE2AD1AD2800744ECD /* Shared Data Type.swift in Sources */,
+				63753FAD2AD1AD2300744ECD /* Outdated Package.swift in Sources */,
+				63753FB72AD1B29400744ECD /* Homebrew Stats.swift in Sources */,
+				63753FB12AD1AE2800744ECD /* Decode Data from Shared Storage.swift in Sources */,
+				63753FB32AD1AF1100744ECD /* Brew Package.swift in Sources */,
+				63753F9B2AD1A9C100744ECD /* CorkWidget.swift in Sources */,
+				63753F992AD1A9C100744ECD /* CorkWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4C2A0DC2A9108DA00E6F172 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1509,6 +1665,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		63753FA12AD1A9C300744ECD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63753F902AD1A9C100744ECD /* CorkWidgetExtension */;
+			targetProxy = 63753FA02AD1A9C300744ECD /* PBXContainerItemProxy */;
+		};
 		C4C2A0E62A9109EB00E6F172 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C4C2A0DF2A9108DA00E6F172 /* CorkHelp */;
@@ -1672,6 +1833,7 @@
 		634065712871AA42001A2178 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Cork/Cork.entitlements;
@@ -1704,6 +1866,7 @@
 		634065722871AA42001A2178 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Cork/Cork.entitlements;
@@ -1728,6 +1891,73 @@
 				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidbures.Cork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		63753FA42AD1A9C300744ECD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = CorkWidget/CorkWidget.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZSVA6DVZHM;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CorkWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CorkWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidbures.Cork.CorkWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		63753FA52AD1A9C300744ECD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = CorkWidget/CorkWidget.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZSVA6DVZHM;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CorkWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CorkWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidbures.Cork.CorkWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1802,6 +2032,15 @@
 			buildConfigurations = (
 				634065712871AA42001A2178 /* Debug */,
 				634065722871AA42001A2178 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63753FA62AD1A9C300744ECD /* Build configuration list for PBXNativeTarget "CorkWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63753FA42AD1A9C300744ECD /* Debug */,
+				63753FA52AD1A9C300744ECD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

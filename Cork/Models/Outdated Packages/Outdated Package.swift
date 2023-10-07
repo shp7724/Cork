@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct OutdatedPackage: Identifiable, Equatable, Hashable
+struct OutdatedPackage: Identifiable, Equatable, Hashable, Codable
 {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     
     let package: BrewPackage
     
