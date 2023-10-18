@@ -94,8 +94,26 @@ struct ContentView: View, Sendable
                     .help("navigation.install-package.help")
                 }
 
+                ToolbarItem(id: "flexibleSpace", placement: .automatic) {
+                    Spacer()
+                }
+                .defaultCustomization(.hidden)
+
+                ToolbarItem(id: "refreshPackages", placement: .automatic)
+                {
+                    Button
+                    {
+                        print("What")
+                    } label: {
+                        Label(
+                            title: { Text("navigation.refresh") },
+                            icon: { Image(systemName: "arrow.clockwise.circle") }
+                        )
+                    }
+                }
+                .defaultCustomization(.hidden)
+
                 #warning("TODO: Implement this button")
-                /*
                 ToolbarItem(id: "installPackageDirectly", placement: .automatic)
                 {
                     Button
@@ -112,7 +130,6 @@ struct ContentView: View, Sendable
                     .help("navigation.install-package.direct.help")
                 }
                 .defaultCustomization(.hidden)
-                 */
             }
         }
         .onAppear

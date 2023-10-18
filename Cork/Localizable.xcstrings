@@ -9218,6 +9218,9 @@
         }
       }
     },
+    "navigation.refresh" : {
+
+    },
     "navigation.upgrade-packages" : {
       "localizations" : {
         "cs" : {
