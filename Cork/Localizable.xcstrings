@@ -9219,7 +9219,14 @@
       }
     },
     "navigation.refresh" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refresh Packages"
+          }
+        }
+      }
     },
     "navigation.upgrade-packages" : {
       "localizations" : {

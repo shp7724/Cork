@@ -45,6 +45,43 @@ struct ContentView: View, Sendable
             .navigationSubtitle("navigation.installed-packages.count-\(brewData.installedFormulae.count + brewData.installedCasks.count)")
             .toolbar(id: "PackageActions")
             {
+                ToolbarItem(id: "refreshPackages", placement: .secondaryAction)
+                {
+                    Button
+                    {
+                        print("What")
+                    } label: {
+                        Label(
+                            title: { Text("navigation.refresh") },
+                            icon: { Image(systemName: "arrow.clockwise.circle") }
+                        )
+                    }
+                }
+                .defaultCustomization(.hidden)
+                
+                #warning("TODO: Implement this button")
+                ToolbarItem(id: "installPackageDirectly", placement: .secondaryAction)
+                {
+                    Button
+                    {
+                        print("Ahoj")
+                    } label: {
+                        Label
+                        {
+                            Text("navigation.install-package.direct")
+                        } icon: {
+                            Image(systemName: "plus.viewfinder")
+                        }
+                    }
+                    .help("navigation.install-package.direct.help")
+                }
+                .defaultCustomization(.hidden)
+                
+                ToolbarItem(id: "flexibleSpace", placement: .secondaryAction) {
+                    Spacer()
+                }
+                .defaultCustomization(.hidden)
+                
                 ToolbarItem(id: "upgradePackages", placement: .primaryAction)
                 {
                     Button
@@ -93,43 +130,6 @@ struct ContentView: View, Sendable
                     }
                     .help("navigation.install-package.help")
                 }
-
-                ToolbarItem(id: "flexibleSpace", placement: .automatic) {
-                    Spacer()
-                }
-                .defaultCustomization(.hidden)
-
-                ToolbarItem(id: "refreshPackages", placement: .automatic)
-                {
-                    Button
-                    {
-                        print("What")
-                    } label: {
-                        Label(
-                            title: { Text("navigation.refresh") },
-                            icon: { Image(systemName: "arrow.clockwise.circle") }
-                        )
-                    }
-                }
-                .defaultCustomization(.hidden)
-
-                #warning("TODO: Implement this button")
-                ToolbarItem(id: "installPackageDirectly", placement: .automatic)
-                {
-                    Button
-                    {
-                        print("Ahoj")
-                    } label: {
-                        Label
-                        {
-                            Text("navigation.install-package.direct")
-                        } icon: {
-                            Image(systemName: "plus.viewfinder")
-                        }
-                    }
-                    .help("navigation.install-package.direct.help")
-                }
-                .defaultCustomization(.hidden)
             }
         }
         .onAppear

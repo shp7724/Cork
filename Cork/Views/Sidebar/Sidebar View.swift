@@ -74,7 +74,7 @@ struct SidebarView: View
                 .help("action.go-to-status-page")
                 .disabled(appState.navigationSelection == nil || !searchText.isEmpty || !currentTokens.isEmpty)
             }
-            .defaultCustomization(.visible, options: [.alwaysAvailable])
+            .customizationBehavior(.disabled)
         }
         .sheet(isPresented: $appState.isShowingMaintenanceSheet)
         {
