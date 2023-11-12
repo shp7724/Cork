@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        ${HEAD}
+        ${PAGE_TITLE}
+        ${DESCRIPTION}
+        ${ROBOTS}
+    </head>
+    <body>
+        <article>
+            <h1 id="detail-page">Detail Page <a class="heading-anchor-permalink" href="#detail-page">#</a></h1>
+<h2 id="package-details">Package Details <a class="heading-anchor-permalink" href="#package-details">#</a></h2>
+<p>The contents of detail pages vary between packages. Nevertheless, each package will have at least this following information shown:</p>
+<ul>
+<li><strong>Name</strong> in bold at the top of the screen.</li>
+<li><strong>Description</strong> under the name.</li>
+<li><strong>Tap</strong> the package was installed from.</li>
+<li><strong>Type</strong>, whether it is a formula or a cask.</li>
+<li><strong>Homepage</strong> of the project or developer.</li>
+<li>The date the package was installed on.</li>
+<li>The size of the package.</li>
+</ul>
+<p>Under the package’s name is an area where package status items might be displayed. However, not all packages have status items. These statuses might be:</p>
+<ul>
+<li>A list of packages that depend on this package, shown as <strong>Dependency of [packages]</strong>.</li>
+<li>Whether the package is <strong>Outdated</strong>.</li>
+<li>If you set Cork to show Package caveats as Minified, optional caveats will be displayed under <strong>Has Caveats</strong>. Click on the status item to reveal the caveats.</li>
+</ul>
+<p>If a packages has dependencies, an additional item will be shown between <strong>Homepage</strong> and <strong>Installed on</strong>:</p>
+<ul>
+<li><strong>Dependencies</strong> dropdown, which will show all package dependencies.
+<ul>
+<li><strong>Direct</strong> dependencies are packages that are needed by the package itself.</li>
+<li><strong>Indirect</strong> dependencies are dependencies of direct dependencies.</li>
+</ul>
+</li>
+</ul>
+<p>There are two additional buttons at the bottom of the page:</p>
+<ul>
+<li><strong>Pin to version [package version]</strong>: <a href="../../package-operations/advanced/pin.html">Pin</a> the package to the currently-installed version.</li>
+<li><strong>Uninstall [package]</strong>: <a href="">Uninstall</a> the package.
+<ul>
+<li>If you enabled <a href="../../package-operations/advanced/pin.html">Purging</a>, the button will have the additional option of purging the package instead.</li>
+</ul>
+</li>
+</ul>
+<h2 id="tap-details">Tap Details <a class="heading-anchor-permalink" href="#tap-details">#</a></h2>
+<p>Tap details pages show you basic info about the selected tap. Each details page contains the following items:</p>
+<ul>
+<li><strong>Name</strong> in bold at the top of the screen.</li>
+<li><strong>Contents</strong> of the tap; this specifies whether the tap has formulae or casks.</li>
+<li><strong>Homepage</strong> of the tap, where the tap is configured.</li>
+<li>A list of included packages</li>
+</ul>
+<p>Additionally, taps maintained by Homebrew developers have an icon next to the tap name to indicate that they are vetted for harmful packages.</p>
+
+        </article>
+    </body>
+</html>

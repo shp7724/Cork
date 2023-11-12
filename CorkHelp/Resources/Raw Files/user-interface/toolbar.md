@@ -2,7 +2,7 @@
 
 The toolbar contains a few common actions that you're likely to use often.
 
-![Toolbar](/Users/david/Documents/xCode Projekty/macOS/Cork/CorkHelp/Resources/Raw Files/user-interface/Assets/Toolbar.png)
+![Toolbar](/Users/david/Developer/macOS/Cork/CorkHelp/Resources/Raw Files/user-interface/Assets/Toolbar.png)
 
 ## Home
 

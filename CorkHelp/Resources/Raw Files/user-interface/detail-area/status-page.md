@@ -2,7 +2,7 @@
 
 The Status Page offers a quick overview of the current state of your Homebrew installation and lets you perform maintenance tasks.
 
-![Status Page](/Users/david/Documents/xCode Projekty/macOS/Cork/CorkHelp/Resources/Raw Files/user-interface/Assets/Status Page.png)
+![Status Page](/Users/david/Developer/macOS/Cork/CorkHelp/Resources/Raw Files/user-interface/Assets/Status Page.png)
 
 ## Outdated Package List
 

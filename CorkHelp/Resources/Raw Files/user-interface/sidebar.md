@@ -2,7 +2,7 @@
 
 The Sidebar lets you quickly navigate through your installed [packages](../getting-started/main.md#basic-terms) and added [taps](../getting-started/main.md#basic-terms). 
 
-![Sidebar](/Users/david/Documents/xCode Projekty/macOS/Cork/CorkHelp/Resources/Raw Files/user-interface/Assets/Sidebar.png)
+![Sidebar](/Users/david/Developer/macOS/CorkHelp/Resources/Raw Files/user-interface/Assets/Sidebar.png)
 
 When you click one of the packages or taps in the list, it will open in the Detail Area and show you more information about the selected item.
 
