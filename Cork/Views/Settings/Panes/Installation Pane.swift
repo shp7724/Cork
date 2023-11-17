@@ -12,6 +12,8 @@ struct InstallationAndUninstallationPane: View
     @AppStorage("showCompatibilityWarning") var showCompatibilityWarning: Bool = true
 
     @AppStorage("showPackagesStillLeftToInstall") var showPackagesStillLeftToInstall: Bool = false
+    
+    @AppStorage("showDescriptionsInSearchResults") var showDescriptionsInSearchResults: Bool = false
 
     @AppStorage("purgeCacheAfterEveryUninstallation") var purgeCacheAfterEveryUninstallation: Bool = false
     @AppStorage("removeOrphansAfterEveryUninstallation") var removeOrphansAfterEveryUninstallation: Bool = false
@@ -59,6 +61,16 @@ struct InstallationAndUninstallationPane: View
                  Text("settings.install-uninstall.uninstallation")
                  }
                  */
+                
+                LabeledContent
+                {
+                    Toggle(isOn: $showDescriptionsInSearchResults)
+                    {
+                        Text("settings.general.search-results.toggle")
+                    }
+                } label: {
+                    Text("settings.general.search-results")
+                }
 
                 LabeledContent {
                     Toggle(isOn: $showCompatibilityWarning)

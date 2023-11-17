@@ -18,7 +18,8 @@ struct FormulaeSection: View {
     let currentTokens: [PackageSearchToken]
     let searchText: String
 
-    var body: some View {
+    var body: some View 
+    {
         Section("sidebar.section.installed-formulae")
         {
             if appState.isLoadingFormulae

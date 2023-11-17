@@ -16,7 +16,6 @@ struct GeneralPane: View
     @AppStorage("displayOnlyIntentionallyInstalledPackagesByDefault") var displayOnlyIntentionallyInstalledPackagesByDefault: Bool = true
     
     @AppStorage("caveatDisplayOptions") var caveatDisplayOptions: PackageCaveatDisplay = .full
-    @AppStorage("showDescriptionsInSearchResults") var showDescriptionsInSearchResults: Bool = false
     
     @AppStorage("enableRevealInFinder") var enableRevealInFinder: Bool = false
     
@@ -82,16 +81,6 @@ struct GeneralPane: View
                     Text("settings.general.package-caveats.minified.info")
                         .font(.caption)
                         .foregroundColor(Color(nsColor: NSColor.systemGray))
-                }
-
-                LabeledContent
-                {
-                    Toggle(isOn: $showDescriptionsInSearchResults)
-                    {
-                        Text("settings.general.search-results.toggle")
-                    }
-                } label: {
-                    Text("settings.general.search-results")
                 }
 
                 LabeledContent
