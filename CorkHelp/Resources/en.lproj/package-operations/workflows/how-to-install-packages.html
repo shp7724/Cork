@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>How to Install a Package</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <section>
+      <h1>How to Install a Package</h1>
+      
+      <p>You can start installing a package in three ways:</p>
+<ul>
+  <li>
+    <p>Click <img src="/package-operations/workflows/Assets/Install Button.jpg" class="inline" /> in the <a href="/user-interface/toolbar.html">toolbar</a></p>
+  </li>
+  <li>Press <code class="language-plaintext highlighter-rouge">⌘ + N</code></li>
+  <li>Select <strong>Install Packages</strong> in the Menu Bar, in <strong>Packages → Install Packages</strong></li>
+</ul>
+
+<p>No matter which one you choose, a dialog with the title “Install packages” will appear.</p>
+
+<h2 id="installation-steps">Installation Steps</h2>
+
+<p>Now, we will go over every step of the installation process.</p>
+
+<separator></separator>
+
+<p><img src="./Assets/Install%20Start.png" alt="Install Start" /></p>
+<h3 id="search-for-packages">Search for Packages</h3>
+
+<p>If you enabled <a href="./discoverability.html">Discoverability</a>, you will see a list of the most popular packages, depending on how you <a href="/settings/sections/discoverability.html">configured</a> this feature. You can select a package from this list and click <strong>Install</strong> to immediately start installing that package.</p>
+
+<p>If you have not enabled Discoverability, you will see a text field. Write the name of the package you’d like to install into this field, and either press <code class="language-plaintext highlighter-rouge">Return ↩</code> on your keyboard, or click <strong>Search</strong>.</p>
+
+<separator></separator>
+
+<p><img src="./Assets/Search%20Results.png" alt="Search Results" /></p>
+<h3 id="choose-the-right-package">Choose the Right Package</h3>
+
+<p>After a few seconds, you will see a list of the best matches. The way this list will look depends on how you <a href="/getting-started/first-steps/main.html">set up</a> Cork, and how you <a href="/settings/main.html">changed the various settings</a>.</p>
+
+<p>In any case, you will see a list of packages. The list is divided into <a href="/getting-started/main.html#cork-terminology">Formulae and Casks</a>, with each section collapsible by clicking <strong>Hide</strong> on the right side of its section header.</p>
+
+<p>When you find the package you want to install, click on it to select its row, then click <strong>Install</strong>.</p>
+
+<p>If you have not found the package you were looking for, you can search for a different keyword by using the search field at the top of the dialog. Write in your new search query, and either pres <code class="language-plaintext highlighter-rouge">Return ↩</code> on your keyboard, or click <strong>Search</strong>.</p>
+
+<separator></separator>
+
+<p><img src="./Assets/Install%20Process%20Running.png" alt="Install Process Running" /></p>
+<h3 id="let-the-installation-run">Let the Installation Run</h3>
+
+<p>This step of the process is entirely automated. You will see the description of the current step of the installation process at the top of the dialog, with a progress bar under it that shows you the overall progress of the installation.</p>
+
+<p>If you have enabled the <a href="/settings/sections/packages.html">showing of real-time outputs of operations</a>, you will also see the real-time output of the operation above the progress bar. To expand it, click <strong>Show details</strong>.</p>
+
+<separator></separator>
+
+<p><img src="./Assets/Install%20Process%20Successful.png" alt="Install Process Successful" /></p>
+<h3 id="finish-the-installation">Finish the Installation</h3>
+
+<p>At the end of the install process, you will see a dialog that confirms that the installation was successful.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p>Sometimes, installations might not go as planned.</p>
+
+<h3 id="elevated-permissions-required">Elevated Permissions Required</h3>
+
+<p><img src="./Assets/Additional%20Permissions.png" alt="Eleated permissions required dialog" /></p>
+
+<p>Some packages might require elevated permissions. In such cases, a dialog pictured above will appear. To finish installing such package, follow the instructions in the dialog.</p>
+
+<h3 id="dialog-goes-blank">Dialog Goes Blank</h3>
+
+<p>This is a known issue caused by Apple. As of now, there is not fix apart from clicking on the Cork icon in the Dock while holding <code class="language-plaintext highlighter-rouge">Option ⌥</code>, and clicking <strong>Force Quit</strong>.</p>
+
+<h3 id="installation-failed">Installation failed</h3>
+
+<p>For reasons such as broken Homebrew installations, unstable internet, and other rare situations, the installation process might fail, in which case you will see a failure dialog. If this happens, restart your Mac and try again.</p>
+
+    </section>
+    <footer>
+      &copy; to me
+    </footer>
+  </body>
+</html>
