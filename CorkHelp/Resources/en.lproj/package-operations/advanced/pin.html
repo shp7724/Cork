@@ -1,15 +1,45 @@
 <!doctype html>
-<html>
-    <head>
-        ${HEAD}
-        ${PAGE_TITLE}
-        ${DESCRIPTION}
-        ${ROBOTS}
-    </head>
-    <body>
-        <article>
-            <h1 id="package-pinning">Package Pinning <a class="heading-anchor-permalink" href="#package-pinning">#</a></h1>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Package Pinning</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <section>
+      <h1>Package Pinning</h1>
+      
+      <p>If you want to keep a package at its current version, you can <strong>pin</strong> it to stop it from being updated. Note that Homebrew might update a pinned package regardless in case the package is a dependency of another package that is not pinned.</p>
 
-        </article>
-    </body>
+<p>A pinned package will have a pin icon next to its name:</p>
+
+<p><img src="./Assets/Pinned Package Example.jpg" alt="Pinned Package Example" /></p>
+
+<h2 id="pin-a-package">Pin a Package</h2>
+
+<p>To pin a package:</p>
+
+<ol>
+  <li>Open its <a href="/user-interface/detail-area/detail-page.html">Detail Page</a></li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Pin to version [version]</code> at the bottom of the Detail Page</li>
+</ol>
+
+<h2 id="unpin-a-package">Unpin a Package</h2>
+
+<p>To unpin a package:</p>
+
+<ol>
+  <li>Open its <a href="/user-interface/detail-area/detail-page.html">Detail Page</a></li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Unpin from version [version]</code> at the bottom of the Detail Page</li>
+</ol>
+
+    </section>
+    <footer>
+      &copy; to me
+    </footer>
+  </body>
 </html>

@@ -1,15 +1,33 @@
 <!doctype html>
-<html>
-    <head>
-        ${HEAD}
-        ${PAGE_TITLE}
-        ${DESCRIPTION}
-        ${ROBOTS}
-    </head>
-    <body>
-        <article>
-            <h1 id="purge-packages">Purge Packages <a class="heading-anchor-permalink" href="#purge-packages">#</a></h1>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Package Purging</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <section>
+      <h1>Package Purging</h1>
+      
+      <p>Unlike a normal uninstall, purging a package removes all files associated with a package, even those that might be in use by other packages; as long as a file is used by a package that’s purged, it will get removed. This can lead to Homebrew breaking if you remove the wrong package. Therefore, purging is disabled by default.</p>
 
-        </article>
-    </body>
+<h2 id="enabling-purging">Enabling Purging</h2>
+
+<p>To enable purging, go to <strong>Settings → Package</strong> and check <strong>Enable package purging</strong> under the <strong>Advanced</strong> section.</p>
+
+<p>To learn more, see <a href="/settings/sections/packages.html">Package Settings</a></p>
+
+<h2 id="purging-packages">Purging packages</h2>
+
+<p>To learn how to purge packages, please see <a href="/user-interface/sidebar.html#package-actions">Package Actions</a> and <a href="/user-interface/detail-area/detail-page.html">Detail Page</a></p>
+
+    </section>
+    <footer>
+      &copy; to me
+    </footer>
+  </body>
 </html>

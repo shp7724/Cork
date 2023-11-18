@@ -1,46 +1,73 @@
 <!doctype html>
-<html>
-    <head>
-        ${HEAD}
-        ${PAGE_TITLE}
-        ${DESCRIPTION}
-        ${ROBOTS}
-    </head>
-    <body>
-        <article>
-            <h1 id="sidebar">Sidebar <a class="heading-anchor-permalink" href="#sidebar">#</a></h1>
-<p>The Sidebar lets you quickly navigate through your installed <a href="../getting-started/main.md#basic-terms">packages</a> and added <a href="../getting-started/main.md#basic-terms">taps</a>.</p>
-<p>![Sidebar](/Users/david/Documents/xCode Projekty/macOS/Cork/CorkHelp/Resources/Raw Files/user-interface/Assets/Sidebar.png)</p>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <section>
+      <h1>Sidebar</h1>
+      
+      <h1 id="sidebar">Sidebar</h1>
+
+<p>The Sidebar lets you quickly navigate through your installed <a href="../getting-started/getting-started-main.html#basic-terms">packages</a> and added <a href="../getting-started/getting-started-main.html#basic-terms">taps</a>.</p>
+
+<p><img src="/user-interface/Assets/Sidebar.png" alt="Sidebar" /></p>
+
 <p>When you click one of the packages or taps in the list, it will open in the Detail Area and show you more information about the selected item.</p>
+
 <p>At the top of the package list, you can see the search field user for filtering out packages.</p>
-<p>Above the search field, you can see the <code>Home</code> button, which you can use to go back to the start page when you have a package or tap opened in the Detail Area.</p>
-<h2 id="search-field">Search Field <a class="heading-anchor-permalink" href="#search-field">#</a></h2>
+
+<p>Above the search field, you can see the <code class="language-plaintext highlighter-rouge">Home</code> button, which you can use to go back to the start page when you have a package or tap opened in the Detail Area.</p>
+
+<h2 id="search-field">Search Field</h2>
+
 <p>Not only can you use the search field to filter out packages by name, you can also use search filters to only look for packages that meet certain criteria.</p>
+
 <p>To show a list of available filters, write # into an <strong>empty</strong> search field. You can then select one from the list. You can choose any of these filters:</p>
+
 <ul>
-<li><strong>Formula</strong>: Show only Formulae.</li>
-<li><strong>Cask</strong>: Show only Casks.</li>
-<li><strong>Tap</strong>: Show only Taps.</li>
-<li><strong>Manually Installed</strong>: Show only packages that you have installed manually, and leave out all packages installed only as dependencies.</li>
-</ul>
-<p>For example, you might have the package <code>wireguard</code> installed. This package is available as both a formula and a cask. To show only the Formula, apply the <strong>Formula</strong> filter, and then search for <code>wireguard</code>. You will only see the formula.</p>
-<p>Another example is looking up formulae that were manually installed. To do this, apply the <strong>Formula</strong> filter, and then apply the <strong>Manually Installed</strong> filter.</p>
-<h2 id="quick-actions">Quick Actions <a class="heading-anchor-permalink" href="#quick-actions">#</a></h2>
-<p>When you right-click or Control-click a package or tap in the list, you will see some quick actions, depending on how you have configured Cork.</p>
-<h3 id="package-actions">Package Actions <a class="heading-anchor-permalink" href="#package-actions">#</a></h3>
-<p>For more info on the following actions, see the page <a href="../package-operations/main.html">Package Operations</a>.</p>
-<ul>
-<li><strong>Tag [package name]</strong>: Mark a package of interest.</li>
-<li><strong>Untag [package name]</strong>: Remove the tagged status from a package.</li>
-<li><strong>Uninstall [package name]</strong>: Uninstall a package.</li>
-<li><strong>Purge [package name]</strong>: Purge a package. See <a href="../package-operations/advanced/purging.html">Package Purging</a> for more information</li>
-</ul>
-<h3 id="tap-actions">Tap Actions <a class="heading-anchor-permalink" href="#tap-actions">#</a></h3>
-<p>For more info on the following actions, see the page <a href="../tap-operations/main.html">Tap Operations</a>.</p>
-<ul>
-<li><strong>Remove [tap name]</strong>: Remove a tap.</li>
+  <li><strong>Formula</strong>: Show only Formulae.</li>
+  <li><strong>Cask</strong>: Show only Casks.</li>
+  <li><strong>Tap</strong>: Show only Taps.</li>
+  <li><strong>Manually Installed</strong>: Show only packages that you have installed manually, and leave out all packages installed only as dependencies.</li>
 </ul>
 
-        </article>
-    </body>
+<p>For example, you might have the package <code class="language-plaintext highlighter-rouge">wireguard</code> installed. This package is available as both a formula and a cask. To show only the Formula, apply the <strong>Formula</strong> filter, and then search for <code class="language-plaintext highlighter-rouge">wireguard</code>. You will only see the formula.</p>
+
+<p>Another example is looking up formulae that were manually installed. To do this, apply the <strong>Formula</strong> filter, and then apply the <strong>Manually Installed</strong> filter.</p>
+
+<h2 id="quick-actions">Quick Actions</h2>
+
+<p>When you right-click or Control-click a package or tap in the list, you will see some quick actions, depending on how you have configured Cork.</p>
+
+<h3 id="package-actions">Package Actions</h3>
+
+<p>For more info on the following actions, see the page <a href="../package-operations/package-operations-main.html">Package Operations</a>.</p>
+
+<ul>
+  <li><strong>Tag [package name]</strong>: Mark a package of interest.</li>
+  <li><strong>Untag [package name]</strong>: Remove the tagged status from a package.</li>
+  <li><strong>Uninstall [package name]</strong>: Uninstall a package.</li>
+  <li><strong>Purge [package name]</strong>: Purge a package. See <a href="../package-operations/advanced/purging.html">Package Purging</a> for more information</li>
+</ul>
+
+<h3 id="tap-actions">Tap Actions</h3>
+
+<p>For more info on the following actions, see the page <a href="../tap-operations/tap-operations-main.html">Tap Operations</a>.</p>
+
+<ul>
+  <li><strong>Remove [tap name]</strong>: Remove a tap.</li>
+</ul>
+
+    </section>
+    <footer>
+      &copy; to me
+    </footer>
+  </body>
 </html>

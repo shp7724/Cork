@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Maintenance Operations</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <section>
+      <h1>Maintenance Operations</h1>
+      
+      <p>While Homebrew usually does a good job keeping itself functional, from time to time, situations might arise that Homebrew can’t handle on its own:</p>
+<ol>
+  <li>You uninstalled a package, but not its dependencies.</li>
+  <li>You have installed many large packages.</li>
+  <li>You might have broken something.</li>
+</ol>
+
+<p>Maintenance takes care of such situations and lets you keep Cork and Homebrew alike fast and functional.</p>
+
+<h2 id="running-maintenance">Running Maintenance</h2>
+
+<p>You have three ways to initiate the maintenance process:</p>
+<ol>
+  <li>Click <strong>Brew Maintenance…</strong> or <strong>Delete Cached Downloads…</strong> on the <a href="/user-interface/detail-area/status-page.html">Status Page</a>. Both options will show the same window, but <strong>Brew Maintenance</strong> will have the default steps you have set in <a href="/settings/sections/maintenance.html">Maintenance Settings</a> pre-selected, while <strong>Delete Cached Downloads</strong> will have only the step <strong>Delete cached downloads</strong> pre-selected.</li>
+  <li>Click <strong>Maintenance</strong> in the Menu Bar, then click either <strong>Perform Maintenance…</strong> or <strong>Delete Cached Downloads…</strong>. See above for the explanation of the differences between these two options.</li>
+  <li>Use the keyboard shortcut <code class="language-plaintext highlighter-rouge">⇧ ⌘ M</code> to open the <strong>Maintenance dialog</strong>, or <code class="language-plaintext highlighter-rouge">⌥ ⌘ M</code> to open the <strong>Delete cached downloads</strong> dialog.</li>
+</ol>
+
+<h2 id="maintenance-options">Maintenance Options</h2>
+
+<p>You can mix-and-match the following settings, depending on what you want to do:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Step Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Uninstall orphaned packages</td>
+      <td><strong>Orphan</strong> is a package that was installed as a dependency of another package, and this package is no longer installed.<br />This step removes such packages.</td>
+    </tr>
+    <tr>
+      <td>Purge Homebrew cache</td>
+      <td>Delete cached data stored by Homebrew.</td>
+    </tr>
+    <tr>
+      <td>Delete cached downloads</td>
+      <td>Delete leftover files from completed package installations.</td>
+    </tr>
+    <tr>
+      <td>Perform health check</td>
+      <td>Check if Homebrew is running properly</td>
+    </tr>
+  </tbody>
+</table>
+
+
+    </section>
+    <footer>
+      &copy; to me
+    </footer>
+  </body>
+</html>
