@@ -9,7 +9,7 @@ import SwiftUI
 import UserNotifications
 
 @main
-struct CorkApp: App
+struct CorkApp: App, Sendable
 {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
@@ -20,6 +20,8 @@ struct CorkApp: App
 
     @StateObject var updateProgressTracker = UpdateProgressTracker()
     @StateObject var outdatedPackageTracker = OutdatedPackageTracker()
+    
+    @StateObject var cachedDownloadsFolderObserver: FolderObservable = .init(folderUrl: AppConstants.brewCachedDownloadsPath)
 
     @AppStorage("hasFinishedOnboarding") var hasFinishedOnboarding: Bool = false
 
@@ -134,6 +136,12 @@ struct CorkApp: App
 
                         completion(NSBackgroundActivityScheduler.Result.finished)
                     }
+                }
+                .onChange(of: cachedDownloadsFolderObserver.files)
+                { newValue in
+                    print("Change in cached downloads: \(newValue)")
+                    
+                    appDelegate.appState.cachedDownloadsFolderSize = directorySize(url: AppConstants.brewCachedDownloadsPath)
                 }
                 .onChange(of: outdatedPackageTracker.outdatedPackages.count)
                 { newValue in
