@@ -106,6 +106,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
     
     private var aboutWindowController: NSWindowController?
 
+    @MainActor 
     func showAboutPanel()
     {
         if aboutWindowController == nil

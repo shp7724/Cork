@@ -102,14 +102,14 @@ struct CorkApp: App
                                     newOutdatedPackages = .init()
                                 }
 
-                                if newOutdatedPackages.count > outdatedPackageTracker.outdatedPackages.count
+                                if await newOutdatedPackages.count > outdatedPackageTracker.outdatedPackages.count
                                 {
                                     print("New updates found")
 
                                     /// Set this to `true` so the normal notification doesn't get sent
                                     sendStandardUpdatesAvailableNotification = false
 
-                                    let differentPackages = newOutdatedPackages.subtracting(outdatedPackageTracker.outdatedPackages)
+                                    let differentPackages = await newOutdatedPackages.subtracting(outdatedPackageTracker.outdatedPackages)
                                     print("Changed packages: \(differentPackages)")
 
                                     sendNotification(title: String(localized: "notification.new-outdated-packages-found.title"), subtitle: differentPackages.map(\.package.name).formatted(.list(type: .and)))

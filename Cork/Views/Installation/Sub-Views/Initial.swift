@@ -80,46 +80,35 @@ struct InstallationInitialView: View
                 {
                     Button
                     {
-                        print("Would install package \(foundPackageSelection)")
-                        
-                        let topCasksSet = Set(topPackagesTracker.topCasks)
-                        
-                        var selectedTopPackageIsCask: Bool
+                        Task
                         {
-                            // If this UUID is in the top casks tracker, it means it's a cask. Otherwise, it's a formula. So we test if the result of looking for the selected package in the cask tracker returns nothing; if it does return nothing, it's a formula (since the package is not in the cask tracker)
-                            if topCasksSet.filter({ $0.id == foundPackageSelection.first }).isEmpty
+                            print("Would install package \(foundPackageSelection)")
+                            
+                            let topCasksSet = Set(topPackagesTracker.topCasks)
+                            
+                            do
                             {
-                                return false
+                                let packageToInstall: BrewPackage = try getTopPackageFromUUID(requestedPackageUUID: foundPackageSelection.first!, isCask: await checkIfPackageIsCask(topCasksSet: topCasksSet), topPackageTracker: topPackagesTracker)
+                                
+                                installationProgressTracker.packagesBeingInstalled.append(PackageInProgressOfBeingInstalled(package: packageToInstall, installationStage: .ready, packageInstallationProgress: 0))
+                                
+                                print("Packages to install: \(installationProgressTracker.packagesBeingInstalled)")
+                                
+                                installationProgressTracker.packageBeingCurrentlyInstalled = packageToInstall.name
+                                
+                                packageInstallationProcessStep = .installing
                             }
-                            else
+                            catch let topPackageInstallationError
                             {
-                                return true
+                                print("Failet while trying to get top package to install: \(topPackageInstallationError)")
+                                
+                                dismiss()
+                                
+                                appState.fatalAlertType = .topPackageArrayFilterCouldNotRetrieveAnyPackages
+                                appState.isShowingFatalError = true
+                                
                             }
                         }
-                        
-                        do
-                        {
-                            let packageToInstall: BrewPackage = try getTopPackageFromUUID(requestedPackageUUID: foundPackageSelection.first!, isCask: selectedTopPackageIsCask, topPackageTracker: topPackagesTracker)
-                            
-                            installationProgressTracker.packagesBeingInstalled.append(PackageInProgressOfBeingInstalled(package: packageToInstall, installationStage: .ready, packageInstallationProgress: 0))
-                            
-                            print("Packages to install: \(installationProgressTracker.packagesBeingInstalled)")
-                            
-                            installationProgressTracker.packageBeingCurrentlyInstalled = packageToInstall.name
-                            
-                            packageInstallationProcessStep = .installing
-                        }
-                        catch let topPackageInstallationError
-                        {
-                            print("Failet while trying to get top package to install: \(topPackageInstallationError)")
-                            
-                            dismiss()
-                            
-                            appState.fatalAlertType = .topPackageArrayFilterCouldNotRetrieveAnyPackages
-                            appState.isShowingFatalError = true
-                            
-                        }
-                        
                     } label: {
                         Text("add-package.install.action")
                     }
@@ -140,6 +129,18 @@ struct InstallationInitialView: View
         .onAppear
         {
             foundPackageSelection = .init()
+        }
+    }
+    
+    private func checkIfPackageIsCask(topCasksSet: Set<TopPackage>) async -> Bool
+    {
+        if topCasksSet.filter({ $0.id == foundPackageSelection.first }).isEmpty
+        {
+            return false
+        }
+        else
+        {
+            return true
         }
     }
 }
