@@ -1428,13 +1428,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "[隐私政策](https://corkmac.app/privacy-en.html)"
+            "value" : "[隐私政策](https://corkmac.app/privacy-han-s.html)"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "[隱私政策](https://corkmac.app/privacy-en.html)"
+            "value" : "[隱私政策](https://corkmac.app/privacy-han-t.html)"
           }
         }
       }
