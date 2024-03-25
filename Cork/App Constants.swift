@@ -48,7 +48,6 @@ struct AppConstants
     }()
 
     // MARK: - Basic executables and file locations
-
     static let brewExecutablePath: URL =
     {
         /// If a custom Homebrew path is defined, use it. Otherwise, use the default paths
@@ -105,12 +104,10 @@ struct AppConstants
     }()
 
     // MARK: - Storage for tagging
-
     static let documentsDirectoryPath: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("Cork", conformingTo: .directory)
     static let metadataFilePath: URL = documentsDirectoryPath.appendingPathComponent("Metadata", conformingTo: .data)
 
     // MARK: - Brew Cache
-
     static let brewCachePath: URL = URL(string: NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).first!)!.appendingPathComponent("Caches", conformingTo: .directory).appendingPathComponent("Homebrew", conformingTo: .directory) // /Users/david/Library/Caches/Homebrew
 
     /// These two have the symlinks to the actual downloads
@@ -125,6 +122,16 @@ struct AppConstants
     
     static let authorizationEndpointURL: URL = URL(string: "https://automation.tomoserver.eu/webhook/38aacca6-5da8-453c-a001-804b15751319")!
     static let licensingAuthorization: (username: String, passphrase: String) = ("cork-authorization", "choosy-defame-neon-resume-cahoots")
+    
+    // MARK: - JSON Decoding
+    static let jsonDecoder: JSONDecoder =
+    {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .iso8601
+        
+        return decoder
+    }()
     
     // MARK: - Misc Stuff
     static let backgroundUpdateInterval: TimeInterval = 10 * 60

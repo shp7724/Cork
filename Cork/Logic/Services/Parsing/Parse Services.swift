@@ -12,30 +12,26 @@ func parseServices(rawOutput: String) throws -> Set<HomebrewService>
 {
     var servicesTracker: Set<HomebrewService> = .init()
     
+    guard let rawOutputAsData: Data = rawOutput.data(using: .utf8, allowLossyConversion: false) else
+    {
+        throw JSONError.conversionToDataFailed
+    }
+    
     do
     {
-        let parsedJSON: JSON = try parseJSON(from: rawOutput)
-        
-        let servicesArray = parsedJSON.arrayValue
+        let servicesArray: [HomebrewService] = try AppConstants.jsonDecoder.decode([HomebrewService].self, from: rawOutputAsData)
         
         for service in servicesArray
         {
-            let serviceName: String = service["name"].stringValue
-            let serviceStatus: ServiceStatus = ServiceStatus(service["status"].stringValue)
             
-            let user: String? = service["user"].string
-            
-            let serviceURL: URL = service["file"].url ?? URL(string: "/")!
-            
-            let exitCode: Int? = service["exit_code"].int
-            
-            servicesTracker.insert(.init(name: serviceName, status: serviceStatus, user: user, location: serviceURL, exitCode: exitCode))
+            servicesTracker.insert(service)
         }
         
         return servicesTracker
     }
     catch let parsingError
     {
+        AppConstants.logger.error("PArsing of services failed: \(parsingError)")
         throw JSONError.parsingFailed
     }
 }

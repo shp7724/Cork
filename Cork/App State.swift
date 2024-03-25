@@ -7,7 +7,7 @@
 
 import Foundation
 import AppKit
-import UserNotifications
+@preconcurrency import UserNotifications
 
 @MainActor
 class AppState: ObservableObject {

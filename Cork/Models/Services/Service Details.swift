@@ -7,8 +7,10 @@
 
 import Foundation
 
-struct ServiceDetails: Hashable, Codable
+struct ServiceDetails: Identifiable, Hashable, Codable
 {
+    var id: UUID = .init()
+    
     let loaded: Bool
     let schedulable: Bool
     let pid: Int?
@@ -16,4 +18,9 @@ struct ServiceDetails: Hashable, Codable
     let rootDir: URL?
     let logPath: URL?
     let errorLogPath: URL?
+    
+    private enum CodingKeys: String, CodingKey
+    {
+        case loaded, schedulable, pid, rootDir, logPath, errorLogPath
+    }
 }

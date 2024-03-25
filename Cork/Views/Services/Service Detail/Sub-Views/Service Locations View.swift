@@ -19,7 +19,7 @@ struct ServiceLocationsView: View
         {
             LabeledContent
             {
-                Text(service.location.absoluteString)
+                Text(service.file.absoluteString)
             } label: {
                 Text("service.location.label")
             }

@@ -10,6 +10,7 @@ import SwiftyJSON
 
 enum JSONError: Error
 {
+    case conversionToDataFailed
     case parsingFailed
 }
 

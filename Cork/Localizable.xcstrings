@@ -17734,6 +17734,7 @@
       }
     },
     "services.status.error" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -17754,6 +17755,7 @@
       }
     },
     "services.status.other" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -17764,6 +17766,7 @@
       }
     },
     "services.status.scheduled" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -17774,6 +17777,7 @@
       }
     },
     "services.status.started" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -17784,6 +17788,7 @@
       }
     },
     "services.status.stopped" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -17794,6 +17799,7 @@
       }
     },
     "services.status.unknown" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

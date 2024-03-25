@@ -10,21 +10,18 @@
 import Foundation
 import SwiftUI
 
-enum ServiceStatus: Codable, Hashable, CustomStringConvertible
+enum ServiceStatus: String, Codable
 {
     case started
     case scheduled
-
     case error
     case unknown
-
     case stopped
     case none
-
     case other
 
-    init(_ rawValue: String)
-    { /// This will take the `String` representation from the JSON and return the proper `ServiceStatus` type
+    init?(rawValue: String)
+    {
         switch rawValue
         {
         case "started":
@@ -33,6 +30,8 @@ enum ServiceStatus: Codable, Hashable, CustomStringConvertible
             self = .scheduled
         case "error":
             self = .error
+        case "unknown":
+            self = .unknown
         case "stopped":
             self = .stopped
         case "none":
@@ -62,25 +61,9 @@ enum ServiceStatus: Codable, Hashable, CustomStringConvertible
             return "services.status.other"
         }
     }
-    
+
     var displayableName: LocalizedStringKey
     {
-        switch self
-        {
-            case .started:
-                return "services.status.started"
-            case .scheduled:
-                return "services.status.scheduled"
-            case .error:
-                return "services.status.error"
-            case .unknown:
-                return "services.status.unknown"
-            case .stopped:
-                return "services.status.stopped"
-            case .none:
-                return "services.status.none"
-            case .other:
-                return "services.status.other"
-        }
+        LocalizedStringKey(description)
     }
 }

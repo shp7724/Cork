@@ -41,7 +41,7 @@ func loadUpServices(servicesState: ServicesState) async throws -> Set<HomebrewSe
         }
         catch let parsingError
         {
-            AppConstants.logger.error("Parsing of Homebrew services failed: \(parsingError)")
+            AppConstants.logger.error("Parsing of Homebrew services failed: \(parsingError.localizedDescription)")
             
             throw JSONError.parsingFailed
         }

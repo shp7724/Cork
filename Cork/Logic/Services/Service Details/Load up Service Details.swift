@@ -26,7 +26,7 @@ func loadUpServiceDetails(serviceToLoad: HomebrewService) async throws -> Servic
         } 
         catch let parsingError
         {
-            AppConstants.logger.error("Parsing of service details of service \(serviceToLoad.name) failed: \(parsingError)")
+            AppConstants.logger.error("Parsing of service details of service \(serviceToLoad.name) failed: \(parsingError.localizedDescription)")
             
             throw JSONError.parsingFailed
         }
